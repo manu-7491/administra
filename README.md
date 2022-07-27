@@ -1,2 +1,2 @@
 # administra
-Proyecto de app en python para llevar contavilidad casera
+Proyecto de app en python para llevar contabilidad casera
