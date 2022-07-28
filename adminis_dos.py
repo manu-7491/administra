@@ -9,7 +9,7 @@ import tkinter.font as tkFont
 #from tkinter import ttk
 #from tkinter import *
 from modul import fundb,color_fun,cactur_to
-from tkinter import filedialog
+from tkinter import filedialog,messagebox
 import os
 #import tkinter as tk
 import shutil
@@ -46,7 +46,7 @@ class Aplicacion():
         self.text.delete("1.0", "end")
         return
     def DibujarVentana(self):
-      ##  self.dia = time.strftime("%d-%m-%Y")
+        self.dia = time.strftime("%d-%m-%Y")
         self.variable = tk.StringVar()
         self.variable1 = tk.StringVar()
         self.data = {'aguafr': '1', 'aguali': '4', 'luz - ': '2', 'telefo': '3',
@@ -78,7 +78,7 @@ class Aplicacion():
         self.txt_fe = tk.Entry(self.labF, width=17)
         self.txt_fe.config(background="#ccff66",foreground='#FD0114',justify='center')
         self.txt_fe.grid(row=0, column=2, sticky="ws")
-       # self.txt_fe.insert(0,self.dia + '.pdf')
+        self.txt_fe.insert(0,"" + '.pdf')
 #-------- Menu de elegir Proveedor ---------------------
         self.variable1.set(self.OptionList1[0])
         self.opt1 = tk.OptionMenu(self.labF, self.variable1, *self.OptionList1)
@@ -98,6 +98,10 @@ class Aplicacion():
         if var == 'Grabar':
             pass
         else:
+            nomb=self.txt_fe.get()
+            if (nomb==str('.pdf')):
+                messagebox.showinfo(message='Introduce fecha\n   en rename', title='Informacion')
+                return
             self.pdftxt=renomb(self.txt_fe.get())
             self.fitxt=cactur_to.conver(self.pdftxt)
             dates = cactur_to.cacturar(self.fitxt, var)
