@@ -3,15 +3,11 @@
 # Reestruturar administracion-2
 from os import remove
 import time
-#from tkinter import filedialog
 import tkinter as tk
 import tkinter.font as tkFont
-#from tkinter import ttk
-#from tkinter import *
-from modul import fundb,color_fun,cactur_to
+from modulos import fundb,color_fun,cactur_to
 from tkinter import filedialog,messagebox
 import os
-#import tkinter as tk
 import shutil
 
 
@@ -26,8 +22,6 @@ def renomb(dat):
         wd = os.getcwd()
         wdc=wd+"/" + dat
         shutil.copy(wdc,path)
-        #
-        #shutil.copy(filename,wd)
         print('helo')
         return dat
     else:
