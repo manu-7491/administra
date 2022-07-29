@@ -73,14 +73,16 @@ def conver(filepf):
     fname = filepf  # sys.argv[1]  # get document filename
     doc = fitz.open(fname)  # open document
     out = open(fname + ".txt", "w")  # open text output
-    for pag in doc:  # iterate the document pages
-    #page = doc.loadPage(0)
-        page = doc.loadPage(pag)
-        text = page.getText().encode("utf8")  # get plain text (is in UTF-8)
-    out.write(text)  # write text of page
-    out.write(bytes((12,)))  # write page delimiter (form feed 0x0C)
+    num = doc.page_count
+    
+    
+    
+    
+    for pag in doc.pages(step=1):  # iterate the document pages
+        texto = pag.get_textpage().extractText()
+    out.write(texto)  # write text of page  # write page delimiter (form feed 0x0C)
     out.close()
-    os.remove(filepf)
+    #os.remove(filepf)
     return (fname + ".txt")
 
    
