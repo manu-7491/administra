@@ -23,7 +23,7 @@ def renomb(dat):
         wdc=wd+"/" + dat
         shutil.copy(wdc,path)
         print('helo')
-        return dat
+        return wdc
     else:
         tk.messagebox.showinfo(
             'Informacion', 'Tienes que poner fecha en rename')
@@ -90,6 +90,7 @@ class Aplicacion():
     def GrabaFa(self,*args):
         var = self.variable1.get()
         if var == 'Grabar':
+            fundb.conectar()
             pass
         else:
             nomb=self.txt_fe.get()
