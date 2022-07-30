@@ -90,9 +90,9 @@ class Aplicacion():
     def GrabaFa(self,*args):
         var = self.variable1.get()
         if var == 'Grabar':
-            fundb.conectar()
             pass
         else:
+            fundb.conectar()
             nomb=self.txt_fe.get()
             if (nomb==str('.pdf')):
                 messagebox.showinfo(message='Introduce fecha\n   en rename', title='Informacion')
