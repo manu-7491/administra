@@ -118,7 +118,6 @@ def sumagastos(tra):
     conexion.commit()
     conexion.close()
     tod=round(tod,2)
-    print(tod)
     return (tod)
 
 

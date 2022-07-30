@@ -22,7 +22,6 @@ def renomb(dat):
         wd = os.getcwd()
         wdc=wd+"/" + dat
         shutil.copy(wdc,path)
-        print('helo')
         return wdc
     else:
         tk.messagebox.showinfo(
