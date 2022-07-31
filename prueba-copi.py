@@ -1,4 +1,3 @@
-## Ejemplo de uso de fitz
 #!/usr/bin/python3
 import fitz
 from pprint import pprint
